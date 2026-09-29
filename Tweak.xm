@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 %hook FBSystemService
--(BOOL)_isTrustedRequest:(id)request forCaller:(id)caller fromClient:(id)client forBundleInfo:(id)bundleInfo withOptions:(id)options fatalError:(NSError **)fatalError {
+-(BOOL)_isTrustedRequest:(id)request forCaller:(id)caller fromClient:(id)client forApplication:(id)application withOptions:(id)options fatalError:(NSError **)fatalError {
 	BOOL result = %orig;
 
 	if (fatalError && *fatalError) {
